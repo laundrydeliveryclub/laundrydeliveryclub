@@ -6,16 +6,16 @@
   <title>Laundry Delivery Club</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Goudy Bookletter 1911", sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background-color: #f2ff00;
       height: 100vh;
       display: flex;
       flex-direction: column;
     }
     header {
-      background: #f5996c;
+      background: #0011ff;
       color: white;
       padding: 1rem;
       text-align: center;
@@ -26,7 +26,7 @@
     nav {
       display: flex;
       justify-content: center;
-      background: #f5996c;
+      background: #0011ff;
       position: sticky;
       top: 60px;
       z-index: 9;
@@ -52,7 +52,7 @@
     footer {
       text-align: center;
       padding: 1rem;
-      background: #f5996c;
+      background: #0011ff;
       color: white;
       position: sticky;
       bottom: 0;
@@ -86,7 +86,7 @@
     }
     .toggle-button {
       cursor: pointer;
-      color: #f5996c;
+      color: #0011ff;
       text-decoration: underline;
     }
     #guestForm textarea {
@@ -159,6 +159,12 @@
       <p>사랑해. 진부하지만 말로는 다 표현할 수 없을 만큼. 보고 있어도 보고 싶어서 잠든 널 몇 장 몰래 찍었어. 서울로 돌아가면 꼭 지우기로 약속할게. 아마 네가 이 편지를 읽을 때면 난 아마 파리로 가는 비행기일 거야.</p>
       <p>사랑해. 나는 사막으로 가. 부디 그곳에서 너와 나를, 우리를, 그리고 사랑을 찾을 수 있게 빌어줘. 모로코에 도착하면 연락할게. 그때까지 냉장고에 있는 맥주 마시면서 기다리고 있어!</p>
       </div>
+
+      <p><span class="toggle-button" onclick="toggleText('memories')">그날의 기억으로 살아볼게</span></p>
+  <div id="memories" class="text-content">
+    <p>그러니까</p>
+    <p>そばにいて｡</p>
+  </div>
     </section>
 
     <!-- Guestbook Section -->
