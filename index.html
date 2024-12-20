@@ -164,9 +164,8 @@
     <!-- Guestbook Section -->
     <section id="guest">
       <h2>Guest</h2>
-      <p>Leave a message or feedback!</p>
+      <p>Give me a message!</p>
 
-      <!-- 글 작성 폼 -->
       <form id="guestForm">
         <textarea id="guestMessage" rows="4" placeholder="Your message here..." required></textarea><br>
         <button type="submit">Submit</button>
@@ -174,7 +173,6 @@
 
       <h3>Messages</h3>
       <div id="guestMessages">
-        <!-- 저장된 방명록이 여기에 표시됩니다. -->
       </div>
     </section>
 
@@ -196,7 +194,6 @@
 
   <!-- JavaScript -->
   <script>
-    // 특정 섹션을 표시하는 함수
     function showSection(sectionId) {
       const sections = document.querySelectorAll("section");
       sections.forEach(section => section.style.display = "none");
@@ -205,7 +202,6 @@
       if (targetSection) targetSection.style.display = "block";
     }
 
-    // 글 내용을 토글하는 함수
     function toggleText(id) {
       const content = document.getElementById(id);
       if (content.style.display === "none" || content.style.display === "") {
@@ -215,7 +211,6 @@
       }
     }
 
-    // 페이지가 로드될 때 저장된 방명록을 표시
     window.onload = function() {
       displayMessages();
     };
