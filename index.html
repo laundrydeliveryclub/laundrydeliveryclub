@@ -1,38 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .first {
-            background-color:bisque
-        }
-        #second{
-            background-color: black;
-        }
-        span{
-            background-color: coral;
-            width: 300px;
-            height: 500px;
-        }
-        p{
-            background-color: darkslategray;
-            width: 100px;
-            height: 200px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laundry Delivery Club</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #f5996c;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #f5996c;
+      position: sticky;
+      top: 60px;
+      z-index: 9;
+    }
+    nav a {
+      color: white;
+      padding: 1rem;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background: #ffffff;
+    }
+    main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 2rem;
+      margin: 1rem;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-height: calc(100vh - 160px);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #f5996c;
+      color: white;
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      z-index: 10;
+    }
+    section {
+      display: none;
+    }
+    #portfolio {
+      display: block;
+    }
+    .portfolio-section {
+      display: flex;
+      gap: 20px;
+    }
+    .portfolio-section > div {
+      flex: 1;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .text-content {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    .toggle-button {
+      cursor: pointer;
+      color: #f5996c;
+      text-decoration: underline;
+    }
+    #guestForm textarea {
+      width: 100%;
+      padding: 1rem;
+      margin: 1rem 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    #guestMessages div {
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+    }
+  </style>
 </head>
 <body>
- <div class="first">
-    <span>a</span>
-    <span>b</span>
-    <span>c</span>
- </div>
- <div class="second">
-    <p>d</p>
-    <p>e</p>
-    <p>f</p>
- </div>   
+  <!-- Header -->
+  <header>
+    <h1>Laundry Delivery Club</h1>
+    <p>🍋🍋🍋🍋🍋🍋🍋🍋🍋🍋</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#portfolio" onclick="showSection('portfolio')">Portfolio</a>
+    <a href="#diary" onclick="showSection('diary')">Diary</a>
+    <a href="#guest" onclick="showSection('guest')">Guest</a>
+    <a href="#contact" onclick="showSection('contact')">Contact</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <div class="portfolio-section">
+        <!-- Text Work Section -->
+        <div>
+          <h3>Text Works</h3>
+          <ul>
+            <p><span class="toggle-button" onclick="toggleText('loveStory')">사랑불능시대</span></p>
+          </ul>
+          <div id="loveStory" class="text-content">
+            <p>나의 외조부모는 그 시절 드문 연애결혼을 했다더라. 할머니는 17년 전 할아버지가 돌아가신 후로 매년 음력 9월 18일에 제사상을 차려놓고 눈물을 흘리며 신에게 기도한다. 엄마와 난 그런 할머니의 모습을 바라보며 아무 말 없이 그의 손을 잡는다. 감히 무슨 말을 할 수 있을까. 할머니는 언제나 웃으며 괜찮다고 하지만, 언제나 자신의 방 침대 한 켠에 할아버지의 영정사진을 세워놓은 채 잠에 든다. 자그마치 17년이다. 그 세월 동안 나는 초등학교를 졸업하고, 중학교를 졸업하고, 고등학교를 졸업하고. 대학까지 나오고 회사에 다니며 집에서 나와 혼자 살기 시작했다.</p>
+            <p>쏟아진 우유는 먹을 수 없고 닦아낸다 한들 냄새는 사라지지 않는다. 기억해야 한다. 또다시 사랑에 실패하거나, 하늘 위 별에 눈이 멀어 잡겠다고 허우적거리거나, 내가 나를 잡아먹는 실수들은 더 이상 없는 거다. 강하고 단단한 사람이 되기엔 태생이 나약하다는 걸 인정해야 하고 이제 시간 앞에서 아무것도 할 수 없다는 사실은 아주 잘 알고 있다. 우유 비린내 나는 낭만을 찾아 죽어라 달렸던 시간들은 사자(使者)가 되어 멈춰 선 나의 턱밑까지 따라붙었다. 바라는 것도 지쳤고, 왜 더 이상 욕심이 나지 않는지에 대한 의문조차 버렸다. 무료한 인생에서 더 강한 자극? 그것도 옛날에나 유효한 말이었지. 술도 담배도 섹스도 와 닿지가 않는다. 자고 일어나면 거짓말처럼 저 모로코 국경에 누워서 모래바람이나 맞으며 나뭇잎 뜯어 먹고 살고 있었으면 한다.</p>
+            <p>꿈에는 자주 죽은 개가 나온다. 죽은 개에 이어 이제 나는 보고 싶은 얼굴들을 떠올린다. 돋보기를 쓰고 화투점을 치는 할머니의 얼굴, 일찍 간 할아버지가 갈치를 발라내던 얼굴, 맥주 한 잔에 시뻘게지는 엄마의 얼굴, 꿈을 꾸며 인상을 쓰는 애인의 얼굴, 냉장고 위에 가만히 앉아 나를 내려다보는 고양이의 얼굴. 그 얼굴들을 기억하며 남은 해를 버텨내야지.</p>
+          </div>
+        </div>
+        <!-- Video Work Section -->
+        <div>
+          <h3>Video Works</h3>
+          <p><strong>2024 No Guts</strong></p>
+          <ul>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/pgZ3Rp1PEMk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diary Section -->
+    <section id="diary">
+      <h2>Diary</h2>
+      <p><span class="toggle-button" onclick="toggleText('desertSnow')">그제는 112년 만에 사막에 눈이 왔대</span></p>
+      <div id="desertSnow" class="text-content">
+        <p>별 생각 없이 뉴스를 넘기던 네가 한 말에 난 지금 사막에 가는 중이야. 사랑이란 뭘까. 동 뜨기 전 갑자기 네가 한 말이 떠올라 카사블랑카행 비행기를 끊는 것? 잠에 취해 잘 다녀오라고 날 안아주던 널 두고 이 편지를 써.</p>
+      <p>사랑해. 진부하지만 말로는 다 표현할 수 없을 만큼. 보고 있어도 보고 싶어서 잠든 널 몇 장 몰래 찍었어. 서울로 돌아가면 꼭 지우기로 약속할게. 아마 네가 이 편지를 읽을 때면 난 아마 파리로 가는 비행기일 거야.</p>
+      <p>사랑해. 나는 사막으로 가. 부디 그곳에서 너와 나를, 우리를, 그리고 사랑을 찾을 수 있게 빌어줘. 모로코에 도착하면 연락할게. 그때까지 냉장고에 있는 맥주 마시면서 기다리고 있어!</p>
+      </div>
+    </section>
+
+    <!-- Guestbook Section -->
+    <section id="guest">
+      <h2>Guest</h2>
+      <p>Leave a message or feedback!</p>
+
+      <!-- 글 작성 폼 -->
+      <form id="guestForm">
+        <textarea id="guestMessage" rows="4" placeholder="Your message here..." required></textarea><br>
+        <button type="submit">Submit</button>
+      </form>
+
+      <h3>Messages</h3>
+      <div id="guestMessages">
+        <!-- 저장된 방명록이 여기에 표시됩니다. -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:altoids03@naver.com">altoids03@naver.com</a></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Laundry Delivery Club</p>
+    <audio controls autoplay loop>
+      <source src="bgm.mp3" type="audio/mpeg">
+    </audio>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // 특정 섹션을 표시하는 함수
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => section.style.display = "none");
+
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) targetSection.style.display = "block";
+    }
+
+    // 글 내용을 토글하는 함수
+    function toggleText(id) {
+      const content = document.getElementById(id);
+      if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    }
+
+    // 페이지가 로드될 때 저장된 방명록을 표시
+    window.onload = function() {
+      displayMessages();
+    };
+
+    // 방명록 추가 함수
+    function addMessage(message) {
+      const messages = JSON.parse(localStorage.getItem('guestMessages')) || [];
+      messages.push(message);
+      localStorage.setItem('guestMessages', JSON.stringify(messages));
+      displayMessages();
+    }
+
+    // 방명록 표시 함수
+    function displayMessages() {
+      const messages = JSON.parse(localStorage.getItem('guestMessages')) || [];
+      const guestMessagesDiv = document.getElementById('guestMessages');
+      guestMessagesDiv.innerHTML = '';
+
+      messages.forEach(function(message) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('guestMessage');
+        messageDiv.innerHTML = `<p>${message}</p>`;
+        guestMessagesDiv.appendChild(messageDiv);
+      });
+    }
+
+    // 방명록 제출 처리
+    document.getElementById('guestForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const message = document.getElementById('guestMessage').value;
+      if (message.trim()) {
+        addMessage(message);
+        document.getElementById('guestMessage').value = '';
+      }
+    });
+  </script>
 </body>
 </html>
